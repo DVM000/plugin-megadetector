@@ -11,6 +11,6 @@ To run the program,
 python3 main.py --stream bottom_camera --n 10 --threshold 0.2
 ```
 
-this will capture 10 images and publish animal detections on topic `env.megadetector.animal`. Value for a topic indicates the confidence of the detection.
-Images containing animals are also uploaded. if employing `--annotations` argument, upload images are annotated with bounding boxes.
+this will capture 10 images, run MegaDetector on each image, publish animal detections on topic `env.megadetector.animal` (value for a topic indicates the confidence of the detection) and upload images containing animals. If employing `--annotations` argument, uploaded images will be annotated with bounding boxes.
+
 
