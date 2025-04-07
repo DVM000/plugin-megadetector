@@ -9,7 +9,7 @@ animal, human and vehicle. MegaDetector is optimized for ecological and conserva
 and classifying entities in images from camera traps
 
 ## How to Use
-To run the programÑ
+To run the program:
 
 ```bash
 # Captures and publishes detections and images containing animals 

@@ -92,8 +92,8 @@ def main(args):
     
     # 1- Capture frames
     with Plugin() as plugin:
-            #capture_stream(plugin, args.stream, 25, NFRAMES, FRAMES_FOLDER)
-            capture(plugin, args.stream, 25, NFRAMES, FRAMES_FOLDER)
+            capture_stream(plugin, args.stream, 25, NFRAMES, FRAMES_FOLDER)
+            #capture(plugin, args.stream, 25, NFRAMES, FRAMES_FOLDER)
                      
     # 2- CNN classification
     results = detection_model.batch_image_detection(FRAMES_FOLDER, batch_size=16)
