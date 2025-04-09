@@ -27,7 +27,7 @@ def capture_stream(plugin, stream, fps, nframes, out_dir=""):
     os.makedirs(out_dir, exist_ok=True)
     
     # use case 2
-    with Camera() as camera:
+    with Camera(stream) as camera:
         i=0
         for sample in camera.stream():
             # Save image
