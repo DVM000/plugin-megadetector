@@ -83,9 +83,10 @@ def main(args):
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
     # Valid versions are MDV6-yolov9-c, MDV6-yolov9-e, MDV6-yolov10-c, MDV6-yolov10-e or MDV6-rtdetr-c
-    # TO DO: add model file to Docker
-    detection_model = pw_detection.MegaDetectorV6(device=DEVICE, pretrained=True, version="MDV6-yolov10-e")
-   
+    #detection_model = pw_detection.MegaDetectorV6(device=DEVICE, pretrained=True, version="MDV6-yolov10-e") # a) Download the model on 1st run
+    # model file added to Docker: https://zenodo.org/records/14567879/files/MDV6-yolov10x.pt?download=1
+    detection_model = pw_detection.MegaDetectorV6(device=DEVICE, weights="models/MDV6-yolov10x.pt", version="MDV6-yolov10-e") # b) Get model from Docker
+    
     # ------------------------------------------------------------------
     # Main loop
     # ------------------------------------------------------------------
