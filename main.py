@@ -50,7 +50,7 @@ def capture(plugin, stream, fps, nframes, out_dir=""):
     for i in range(nframes):
 	    # Capture image
 	    try:
-	        sample = Camera().snapshot()
+	        sample = Camera(stream).snapshot()
 	    except:
 	        print(f"Error capturing image. Simulating.")
 	        sample = np.random.rand(100,100,3) * 255
@@ -136,7 +136,7 @@ if __name__ == '__main__':
         help='Number of frames to capture')
     parser.add_argument(
         '--stream', dest='stream',
-        help='ID or name of a stream', default='node-cam')
+        help='ID or name of a stream', default='bottom_camera')
     parser.add_argument('--threshold', 
         type=float, default='0.2', 
         help='Confidence threshold to consider a detection as positive')
